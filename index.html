@@ -181,7 +181,7 @@
     <p class="lede">SCREENBot scans your screenshots, recognizes what's inside them, and turns them into organized, actionable lists. Built for iPhone. Built stronger for Mac.</p>
     <div class="hero__ctas">
       <a class="btn btn--teal" href="https://apps.apple.com/us/app/screenbot/id6761027461" target="_blank" rel="noopener">Download Free on iOS</a>
-      <a class="btn btn--purple" href="#desktop">Join Beta Waitlist</a>
+      <a class="btn btn--purple" href="/download">Download for Mac</a>
     </div>
     <div class="hero__stats">
       <div class="stat"><b>90%+</b><span>Classification Accuracy</span></div>
@@ -289,34 +289,14 @@
       <div class="feature"><span class="mark">＋</span><p><strong>One-time license.</strong> $44.99 buys 5,000 recognitions outright. No subscription, no recurring charge.</p></div>
     </div>
 
-    <!-- Beta 2 waitlist — Netlify Forms handles submission -->
-    <div class="waitlist-box">
-      <strong>Beta 2 is opening soon.</strong>
-      <p class="sub-text">Self-serve, open enrollment. Drop your email and we'll send the download link the day it opens.</p>
-      <form
-        id="waitlist-form"
-        name="desktop-waitlist"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/"
-      >
-        <input type="hidden" name="form-name" value="desktop-waitlist" />
-        <p class="hidden-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
-        <div class="waitlist-form">
-          <input
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            autocomplete="email"
-          />
-          <button type="submit" class="btn btn--purple">Notify Me</button>
-        </div>
-      </form>
-      <div class="waitlist-success" id="waitlist-success" role="status" aria-live="polite">
-        <span>&#10003;</span> You're on the list. We'll email you when Beta 2 opens.
+    <!-- Public launch: direct download -->
+    <div class="waitlist-box" style="border-color:var(--teal)">
+      <strong>Available now for Mac.</strong>
+      <p class="sub-text">Notarized installer. One-time purchase, no subscription.</p>
+      <div style="margin-top:4px">
+        <a class="btn btn--teal" href="/download">Download SCREENBot Desktop</a>
       </div>
+      <p style="margin:14px 0 0;font-size:13px;color:var(--gray)">v0.1.0 &nbsp;&middot;&nbsp; macOS 12 or later &nbsp;&middot;&nbsp; Intel x64 (Apple Silicon via Rosetta 2)</p>
     </div>
 
   </div>
@@ -399,32 +379,7 @@
   </div>
 </footer>
 
-<script>
-  (function() {
-    var form = document.getElementById('waitlist-form');
-    var success = document.getElementById('waitlist-success');
-    if (!form) return;
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var data = new FormData(form);
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      })
-      .then(function() {
-        form.style.display = 'none';
-        success.classList.add('visible');
-      })
-      .catch(function() {
-        // fallback: let the browser submit normally
-        form.removeEventListener('submit', arguments.callee);
-        form.submit();
-      });
-    });
-  })();
-</script>
 
 </body>
 <!-- deploy-check -->
