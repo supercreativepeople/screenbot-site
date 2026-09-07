@@ -1,3 +1,6 @@
 .netlify/
 .DS_Store
 *.dmg
+
+# HLS fragment files (deploy artifact, not source)
+downloads/*.fhls-*.mp4
